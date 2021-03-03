@@ -72,6 +72,8 @@ router.post(
       profileFields.skills = skills.split(",").map((skill) => skill.trim());
     }
 
+    // console.log(profileFields);
+
     // build social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
@@ -79,23 +81,25 @@ router.post(
     if (facebook) profileFields.social.facebook = facebook;
     if (linkedin) profileFields.social.linkedin = linkedin;
     if (instagram) profileFields.social.instagram = instagram;
-
+    console.log(profileFields);
+    console.log(req.user);
     try {
       let profile = Profile.findOne({ user: req.user.id });
-
       if (profile) {
         // update
         profile = await Profile.findOneAndUpdate(
           { user: req.user.id },
           { $set: profileFields },
-          { new: true }
+          { new: true },
         );
-        return res.json(profile);
+        console.log(profile);
+        return res.json( profile );
       }
       //   create
       profile = new Profile(profileFields);
+      console.log({ profile }, "iiiiii");
       await profile.save();
-      return res.json(profile);
+      return res.json({ profile });
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
