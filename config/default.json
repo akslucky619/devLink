@@ -1,6 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://akash619:akash619@devlink.efnak.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken",
-  "githubClientId": "1b578f7ac377ffebbc16",
-  "githubSecret": "ef50cbbb64b8a7bc4ace1d34b6c603ea17279549"
-}
