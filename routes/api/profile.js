@@ -19,7 +19,6 @@ const { response } = require("express");
 // @description Get curreent users profile
 // @access private
 router.get("/me", auth, async (req, res) => {
-  console.log({ Profile });
   try {
     const profile = await Profile.findOne({
       user: req.user.id,
