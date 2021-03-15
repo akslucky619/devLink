@@ -28,7 +28,9 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.18",
-    "request": "^2.88.2"
+    "redux-logger": "^3.0.6",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
